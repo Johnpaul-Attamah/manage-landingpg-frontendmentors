@@ -29,6 +29,8 @@ Users should be able to:
   - The email address is not formatted correctly
 
 ### Screenshot
+![image](https://user-images.githubusercontent.com/44214523/132107961-272e308d-205a-485d-a80f-bfa9a7609437.png)
+
 
 ### Links
 
