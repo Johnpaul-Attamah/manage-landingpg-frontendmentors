@@ -7,31 +7,28 @@
         overlay = document.querySelector('.overlay'),
         toggleContainer = document.querySelector('.heading .navigation-toggle'),
         toggleIcon  = document.querySelector('.heading .navigation-toggle img');
-        mainHeader= document.querySelector('.heading-intro');
 
     toggleContainer.addEventListener('click', () => {
         if(nav.classList.contains('active')) {
             nav.classList.remove('active');
             overlay.classList.remove('active');
             toggleIcon.src = './images/vectors/icons/icon-hamburger.svg';
-
-            //Restore body
-            mainHeader.classList.remove('active');
-            const scrollY = document.body.style.top;
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
-            toggleContainer.classList.remove('close');
+            document.body.style.overflow = 'auto';
         } else {
             toggleIcon.src = './images/vectors/icons/icon-close.svg';
             nav.classList.add('active');
             overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'
+        }
+    })
 
-            //prevent body from scrolling
-            mainHeader.classList.add('active');
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
-            toggleContainer.classList.add('close');
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 1000) {
+            if(nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         }
     })
 })();
