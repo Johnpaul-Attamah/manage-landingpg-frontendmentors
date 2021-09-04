@@ -943,7 +943,7 @@ a {
     }
 }
 
-@media screen and (max-width: 320px) {
+/* @media screen and (max-width: 320px) {
     .heading .navigation.active {
         left: 33%;
         max-width: 60%;
@@ -966,4 +966,4 @@ a {
     .heading-intro.active .heading-intro-img-box {
         max-width: 65%;
     }
-}
+} */
